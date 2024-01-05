@@ -6,9 +6,33 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 22:54:44 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/02 17:02:37 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/05 17:07:12 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
 
+AMateria::AMateria(){
+    std::cout << "Default Constr Called " << std::endl;
+    
+}
+AMateria::AMateria(std::string type){
+    std::cout << "parame Constr Called " << std::endl;
+    this->type = type;
+}
+AMateria::AMateria(const AMateria &src){
+    std::cout << "copy  Called " << std::endl;
+    *this = src;
+}
+AMateria &AMateria::operator=(const AMateria &src){
+    std::cout << "Copy Asign " << std::endl;
+    if(this != &src)
+        this->type = src.type;
+    return (*this);
+}
+AMateria::~AMateria(){
+    std::cout << "Destructor is Called " << std::endl;
+}
+std::string  const & AMateria::getType() const{
+    return (type);
+}
