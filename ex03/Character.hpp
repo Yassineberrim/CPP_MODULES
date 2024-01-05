@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:25:54 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/05 16:42:26 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/05 19:47:49 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,8 @@ class Character : public ICharacter
 {
     private:
         std::string name;
-        AMateria *item[4];
+        AMateria *inv[4];
+        AMateria *tmp;
     public:
         Character();
         Character(Character const &type);

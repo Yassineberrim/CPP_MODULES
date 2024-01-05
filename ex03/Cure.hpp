@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:29 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/05 16:32:35 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/05 19:01:00 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Cure : public AMateria{
         Cure &operator=(const Cure &src);
         Cure(std::string type);
         ~Cure();
-        Cure *clone() const;
+        AMateria *clone() const;
         void use(ICharacter& target);
 
 };

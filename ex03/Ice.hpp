@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:33 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/05 16:33:14 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/05 19:00:42 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class Ice : public AMateria{
         Ice &operator=(const Ice &src);
         Ice(std::string type);
         ~Ice();
-        Ice *clone() const;
+        AMateria *clone() const;
         void use(ICharacter& target);
 
 };
