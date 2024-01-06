@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:28:09 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/06 16:18:01 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 17:55:54 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 class MateriaSource :public IMateriaSource  {
     private :
         AMateria *materia[4];
-        int count;
+        int i;
         std::string type;
     public :
         MateriaSource();

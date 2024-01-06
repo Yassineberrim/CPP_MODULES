@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 22:39:45 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/06 15:34:51 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 18:28:10 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,5 @@ int main()
     delete bob;
     delete me;
     delete src;
-    
     return 0;
-    
 }
