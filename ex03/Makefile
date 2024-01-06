@@ -6,7 +6,7 @@
 #    By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/01 22:39:48 by yberrim           #+#    #+#              #
-#    Updated: 2024/01/05 19:04:52 by yberrim          ###   ########.fr        #
+#    Updated: 2024/01/06 15:40:40 by yberrim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ GCC = c++
 GCCFLAGS = -std=c++98 -Wall -Wextra -Werror
 
 NAME = main
-SRCS = main.cpp Ice.cpp Cure.cpp Character.cpp AMateria.cpp 
+SRCS = main.cpp Ice.cpp Cure.cpp Character.cpp AMateria.cpp IMateriaSource.cpp MateriaSource.cpp 
 OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 $(NAME): $(OBJS) Dog.hpp Cat.hpp Animal.hpp

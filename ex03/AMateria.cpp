@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/01 22:54:44 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/05 17:07:12 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 16:20:26 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,4 +35,12 @@ AMateria::~AMateria(){
 }
 std::string  const & AMateria::getType() const{
     return (type);
+}
+
+void AMateria::use(ICharacter& target){
+    std::cout << " shoots an ice bolt at " << target.getName() << std::endl;
+}
+
+void AMateria::use(ICharacter& target){
+    std::cout << " shoots an ice bolt at " << target.getName() << std::endl;
 }
