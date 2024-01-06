@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:27 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/06 17:53:42 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:50:40 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Cure::Cure(std::string type){
 Cure::~Cure(){
 }
 AMateria *Cure::clone() const{
-    return (new Cure);
+    return (new Cure());
 }
 void Cure::use(ICharacter& target){
     std::cout << "* heals " << target.getName() <<  "'s wounds " << std::endl;

@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:31 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/06 17:54:00 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 19:50:44 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Ice::Ice(std::string type){
 Ice::~Ice(){
 }
 AMateria *Ice::clone() const{
-    return (new Ice);
+    return (new Ice());
 }
 void Ice::use(ICharacter& target){
     std::cout << "* shoots an ice bolt at " << target.getName() << std::endl;

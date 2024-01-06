@@ -6,12 +6,12 @@
 #    By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/01 22:39:48 by yberrim           #+#    #+#              #
-#    Updated: 2024/01/06 17:39:41 by yberrim          ###   ########.fr        #
+#    Updated: 2024/01/06 18:49:12 by yberrim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 GCC = c++
-GCCFLAGS = -std=c++98 -Wall -Wextra -Werror
+GCCFLAGS = -std=c++98 -Wall -Wextra -Werror 
 
 NAME = main
 SRCS = main.cpp Ice.cpp Cure.cpp Character.cpp AMateria.cpp  MateriaSource.cpp 

@@ -6,37 +6,61 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:25:57 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/06 18:26:06 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 20:02:25 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Character.hpp"
 
-Character::Character(std::string name){
-    this->name = name;
-    content = new t_list;
+Character::Character()
+{
+    this->name = "DEFAULT";
     /*À la construction, l’inventaire est vide*/
     int i = 0;
     while (i < 4)
         inv[i++] = NULL;
+    int j = 0;
+    while (j < 4)
+        floor[j++] = NULL;
+}
+
+Character::Character(std::string name){
+    this->name = name;
+    /*À la construction, l’inventaire est vide*/
+    int i = 0;
+    while (i < 4)
+        inv[i++] = NULL;
+    int j = 0;
+    while (j < 4)
+        floor[j++] = NULL;
 }
 Character::Character(Character const &src){
     *this = src;
 }
 Character::~Character()
 {
-    for (int i = 0; i < 4; i++)
+    std::cout << "Destructor*****" << std::endl;
+    int i = 0;
+    while (i < 4)
     {
         if (inv[i])
+        {
             delete inv[i];
+            std::cout << inv[i]->getType() << std::endl;
+        }
+        i++;
     }
-    while(content){
-        delete content->m;
-        content = content->next;
-    }
-    
 }
+/*
 
+Obj1 = Obj2;
+
+Obj2 into Obj1
+
+Obj2 
+
+
+*/
 Character &Character::operator=(const Character &src){
     if(this == &src)
         return (*this);
@@ -45,6 +69,8 @@ Character &Character::operator=(const Character &src){
     while(i < 4)
     {
         if (inv[i])
+            delete inv[i];
+        if (src.inv[i])
             inv[i] = src.inv[i]->clone();
         i++;
     }
@@ -54,22 +80,26 @@ std::string  const & Character::getName() const{
     return(name);
 }
 void Character::unequip(int idx){
-    if(idx < 0 && idx >= 3)
+    if(idx < 0 && idx > 3)
         return;
-    t_list tmp;
-    tmp.m = inv[idx];
-    tmp.next = NULL;
-    while(content != NULL)
+    int i = 0;
+    while(i < 4)
     {
-        content = content->next;
+        if (inv[i] == NULL)
+        {
+            inv[i] = floor[idx];
+            floor[idx] = NULL;
+            return;
+        }
+        i++;
     }
-    content->next = &tmp;
-    inv[idx] = NULL;
+    
 }
 void Character::use(int idx, ICharacter& target){
     if(idx < 0 && idx >= 3)
         return;
-    inv[idx]->use(target);
+    if(inv[idx])
+        inv[idx]->use(target);
 }
 void Character::equip(AMateria* m){
     int i = 0;
@@ -77,7 +107,8 @@ void Character::equip(AMateria* m){
     {
         if(inv[i] == NULL)
         {
-            inv[i] = m->clone();
+            std::cout << "Av" << std::endl;
+            inv[i] = m;
             return;
         }
         i++;
