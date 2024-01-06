@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/04 15:14:29 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/06 16:11:15 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 17:05:08 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <string>
 
 #include "AMateria.hpp"
-class Cure : virtual public AMateria{
+class Cure : public AMateria{
     public :
         Cure();
         Cure(Cure const &type);

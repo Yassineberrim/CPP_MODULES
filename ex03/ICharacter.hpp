@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/05 15:02:16 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/06 16:16:35 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 17:37:26 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <iostream>
 #include <string>
 #include "AMateria.hpp"
+class AMateria;
 
 class ICharacter
 {

@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:25:54 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/06 16:21:37 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 17:45:37 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,19 @@
 #include <string>
 #include "AMateria.hpp"
 
+typedef struct s_list
+{
+    AMateria *m;
+    struct s_list *next;
+} t_list;
+
+
 class Character : public ICharacter
 {
     private:
         std::string name;
         AMateria *inv[4];
-        
+        t_list *content;
     public:
         Character();
         Character(Character const &type);

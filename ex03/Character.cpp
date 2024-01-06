@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 17:25:57 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/06 15:48:59 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/06 17:50:32 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 Character::Character(std::string name){
     this->name = name;
-    std::cout << "Paramter  Construct " << std::endl;
+    content = new t_list;
     /*À la construction, l’inventaire est vide*/
     int i = 0;
     while (i < 4)
@@ -25,9 +25,16 @@ Character::Character(Character const &src){
 }
 Character::~Character()
 {
-    int i = 0;
-    while (i < 4)
-        delete inv[i++];
+    for (int i = 0; i < 4; i++)
+    {
+        if (inv[i])
+            delete inv[i];
+    }
+    while(content){
+        delete content->m;
+        content = content->next;
+    }
+    
 }
 
 Character &Character::operator=(const Character &src){
@@ -37,7 +44,8 @@ Character &Character::operator=(const Character &src){
     int i = 0;
     while(i < 4)
     {
-        inv[i] = src.inv[i];
+        if (inv[i])
+            inv[i] = src.inv[i]->clone();
         i++;
     }
     return (*this);
@@ -46,32 +54,30 @@ std::string  const & Character::getName() const{
     return(name);
 }
 void Character::unequip(int idx){
-    std::cout << "Unequip " << std::endl;
     if(idx < 0 && idx >= 3)
         return;
-    inv[idx] = NULL;
-    int i = idx;
-    while(i < 3)
+    t_list tmp;
+    tmp.m = inv[idx];
+    tmp.next = NULL;
+    while(content != NULL)
     {
-        inv[i] = inv[i + 1];
-        i++;
+        content = content->next;
     }
-    inv[i] = NULL;
+    content->next = &tmp;
+    inv[idx] = NULL;
 }
 void Character::use(int idx, ICharacter& target){
-    std::cout << "Use " << std::endl;
     if(idx < 0 && idx >= 3)
         return;
     inv[idx]->use(target);
 }
 void Character::equip(AMateria* m){
-    std::cout << "Equip " << std::endl;
     int i = 0;
     while(i < 4)
     {
         if(inv[i] == NULL)
         {
-            inv[i] = m;
+            inv[i] = m->clone();
             return;
         }
         i++;
