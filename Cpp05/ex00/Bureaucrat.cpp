@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:46:27 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/15 13:26:55 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/15 14:00:14 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Bureaucrat::Bureaucrat(std::string const name, int grade)  : name(name), grade(g
     if(grade > 150)
         throw Bureaucrat::GradeTooLowException();
 }
-Bureaucrat::Bureaucrat(const Bureaucrat &src){
+Bureaucrat::Bureaucrat(const Bureaucrat &src): name(src.name){
     *this = src;
 }
 Bureaucrat::~Bureaucrat(){
