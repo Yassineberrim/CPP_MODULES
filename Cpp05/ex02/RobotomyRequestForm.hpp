@@ -1,8 +1,8 @@
 
-#pragma once
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
 #include <iostream>
-
 #include "AForm.hpp"
 
 
@@ -10,8 +10,8 @@ class RobotomyRequestForm : public AForm
 {
     private:
         std::string target;
-        RobotomyRequestForm();
     public:
+        RobotomyRequestForm();
         RobotomyRequestForm(std::string target);
         RobotomyRequestForm(RobotomyRequestForm const & src);
         ~RobotomyRequestForm();
@@ -20,3 +20,4 @@ class RobotomyRequestForm : public AForm
         void execute(Bureaucrat const & executor) const;
 };
 
+#endif

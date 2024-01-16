@@ -1,4 +1,3 @@
-
 #pragma once
 
 #include <iostream>
@@ -10,8 +9,8 @@ class ShrubberyCreationForm : public AForm
 {
     private:
         std::string target;
-        ShrubberyCreationForm();
     public:
+        ShrubberyCreationForm();
         ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm(ShrubberyCreationForm const & src);
         ~ShrubberyCreationForm();
