@@ -12,8 +12,15 @@ std::string RobotomyRequestForm::getTarget() const{
     return this->target;
 }
 
-void RobotomyRequestForm::execute(Bureaucrat const & executor) const{
-    if(executor.getGrade() > this->getGradeToExecute())
+void RobotomyRequestForm::execute(Bureaucrat const &executor) const{
+    if(executor.getGrade() <= this->getGradeToExecute())
+    {
+        std::cout << "make some drilling noises" << std::endl;
+        if (rand() % 2)
+            std::cout << this->target << " has been robotomized successfully" << std::endl;
+        else
+            std::cout << this->target << " robotomization failed" << std::endl;
+    }
+    else
         throw AForm::GradeTooLowException();
-    std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }

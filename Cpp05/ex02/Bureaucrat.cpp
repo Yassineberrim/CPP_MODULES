@@ -1,6 +1,6 @@
 
 #include "Bureaucrat.hpp"
-
+#include "AForm.hpp"
 Bureaucrat::Bureaucrat(std::string const name, int grade)  : name(name), grade(grade){
     if(grade < 1)
         throw Bureaucrat::GradeTooHighException();
@@ -50,4 +50,12 @@ std::ostream &operator<<(std::ostream &out, Bureaucrat const &bureaucrat){
     return(out);
 }
 
-
+void Bureaucrat::executeForm(AForm const & form){
+    try{
+        form.execute(*this);
+        std::cout << this->getName() << " executes " << form.getName() << std::endl;
+    }
+    catch(std::exception &e){
+        std::cout << this->getName() << " cannot execute " << form.getName() << " because " << e.what() << std::endl;
+    }
+}

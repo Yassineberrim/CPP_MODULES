@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <string>
-
+class AForm;
 class Bureaucrat
 {
     private:
@@ -19,11 +19,13 @@ class Bureaucrat
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();
+        void executeForm(AForm const & form);
         class GradeTooHighException : public std::exception {
             public :
                 virtual const char *what() const throw();
         };
         class GradeTooLowException : public std::exception {
+            public :
                 virtual const char *what() const throw();
         };
         

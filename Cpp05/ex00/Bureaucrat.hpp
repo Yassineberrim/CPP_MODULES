@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/12 14:46:29 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/15 13:15:38 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/16 18:35:17 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ class Bureaucrat
                 virtual const char *what() const throw();
         };
         class GradeTooLowException : public std::exception {
+            public :
                 virtual const char *what() const throw();
         };
         

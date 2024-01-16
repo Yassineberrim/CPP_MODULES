@@ -6,7 +6,7 @@
 #    By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/15 13:06:27 by yberrim           #+#    #+#              #
-#    Updated: 2024/01/16 17:01:51 by yberrim          ###   ########.fr        #
+#    Updated: 2024/01/16 17:05:09 by yberrim          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,7 @@ SRCS =  Bureaucrat.cpp main.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyReq
 OBJS = $(SRCS:.cpp=.o)
 all: $(NAME)
 $(NAME): $(OBJS)
-	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME) 
+	$(CC) $(CCFLAGS) $(OBJS) -o $(NAME)
 %.o: %.cpp
 	$(CC) $(CCFLAGS) -c $< -o $@
 clean:
