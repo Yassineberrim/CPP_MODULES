@@ -1,4 +1,6 @@
-#pragma once
+#ifndef SHRUBBERYCREATIONFORM_HPP
+#define SHRUBBERYCREATIONFORM_HPP
+
 
 #include <iostream>
 
@@ -18,3 +20,5 @@ class ShrubberyCreationForm : public AForm
         std::string getTarget() const;
         void execute(Bureaucrat const & executor) const;
 };
+
+#endif

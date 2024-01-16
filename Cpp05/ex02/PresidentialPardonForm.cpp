@@ -6,7 +6,7 @@
 /*   By: yberrim <yberrim@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 17:01:05 by yberrim           #+#    #+#             */
-/*   Updated: 2024/01/15 17:36:17 by yberrim          ###   ########.fr       */
+/*   Updated: 2024/01/16 16:52:26 by yberrim          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,5 @@ void PresidentialPardonForm::execute(Bureaucrat const & executor) const{
         throw AForm::GradeTooLowException();
     std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
 }
-
 
 

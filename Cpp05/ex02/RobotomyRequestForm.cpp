@@ -11,3 +11,9 @@ RobotomyRequestForm & RobotomyRequestForm::operator=(RobotomyRequestForm const &
 std::string RobotomyRequestForm::getTarget() const{
     return this->target;
 }
+
+void RobotomyRequestForm::execute(Bureaucrat const & executor) const{
+    if(executor.getGrade() > this->getGradeToExecute())
+        throw AForm::GradeTooLowException();
+    std::cout << this->getTarget() << " has been pardoned by Zafod Beeblebrox." << std::endl;
+}
